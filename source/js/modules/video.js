@@ -6,17 +6,16 @@ const video = () => {
     const video = videoWrap.querySelectorAll("video")[0];
     const videoClose = videoWrap.querySelector(".video-big__close");
 
+    video.volume = 0.2;
+
     video.addEventListener("click", (e) => {
       e.preventDefault();
       if(video.paused) {
         video.play();
-        console.log("play");
       } else if(video.played) {
         video.pause();
         console.log("pause");
       }
-
-      let timerId = setInterval(() => console.log("paused: ", video.paused), 1000);
     })
 
     btn.addEventListener("click", () => {
@@ -63,6 +62,20 @@ const video = () => {
 
     preview.addEventListener("click", () => {
       videoWrap.classList.add("how-work__video_active");
+      video.volume = 0.2;
+
+      if(video.paused) {
+        video.play();
+      }
+    })
+
+    video.addEventListener("click", (e) => {
+      e.preventDefault();
+      if(video.paused) {
+        video.play();
+      } else if(video.played) {
+        video.pause();
+      }
     })
 
     //playPaused(video);

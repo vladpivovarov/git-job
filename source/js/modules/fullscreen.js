@@ -12,6 +12,7 @@ const fullscreen = () => {
 
     // Количество сладов для показа
     slidesPerView: "auto",
+    parallax: true,
 
     // Управление с клавиатуры
     keyboard: {
